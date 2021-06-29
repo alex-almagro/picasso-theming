@@ -1,0 +1,22 @@
+.themeBtn {
+  margin: 15px 0;
+  text-align: left;
+
+  .themeBtnHeader {
+    display: flex;
+  }
+
+  button {
+    font-size: 25px;
+  }
+
+  .titleWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .themeBtnInfo {
+    margin-top: 10px;
+  }
+}

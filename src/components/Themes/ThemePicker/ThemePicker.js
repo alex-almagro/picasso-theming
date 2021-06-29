@@ -1,20 +1,21 @@
 import React from "react";
+import "./ThemePicker.scss";
 import ThemeBtn from "../ThemeBtn/ThemeBtn";
 import {
   heatMapTheme,
   blackWhiteTheme,
   springTheme,
   medalTheme,
-} from "../../utils/utils";
+} from "../themes";
 
 const ThemePicker = (props) => {
   return (
     <div className="themePicker">
-      <h2>Theme</h2>
+      <h3>Select a theme for the chart:</h3>
       <ThemeBtn
         label="panda"
         emoji="🐼"
-        clicked={() => props.setTheme(blackWhiteTheme)}
+        clicked={() => props.onSetTheme(blackWhiteTheme)}
         title="Black and white theme"
         subtitle="Range coloring"
         info="You define 2 colors for the extreme values, and the intermediate values are colored automatically."
@@ -22,16 +23,16 @@ const ThemePicker = (props) => {
       <ThemeBtn
         label="medal"
         emoji="🏅"
-        clicked={() => props.setTheme(medalTheme)}
+        clicked={() => props.onSetTheme(medalTheme)}
         title="Gold-silver-bronze theme"
         subtitle="Threshold coloring"
         link="https://qlik.dev/libraries-and-tools/picassojs/color---threshold"
-        info="You define different thresholds, and the values will be automatically colored depending on how close they are to the thresholds."
+        info="You define different thresholds, and the values will be automatically colored depending on the slot they belong to."
       />
       <ThemeBtn
         label="flower"
         emoji="🌸"
-        clicked={() => props.setTheme(springTheme)}
+        clicked={() => props.onSetTheme(springTheme)}
         title="Spring theme"
         subtitle="Categorical coloring"
         link="https://qlik.dev/libraries-and-tools/picassojs/color---categorical"
@@ -40,7 +41,7 @@ const ThemePicker = (props) => {
       <ThemeBtn
         label="thermometer"
         emoji="🌡️"
-        clicked={() => props.setTheme(heatMapTheme)}
+        clicked={() => props.onSetTheme(heatMapTheme)}
         title="Heatmap theme"
         subtitle="Sequential coloring"
         link="https://qlik.dev/libraries-and-tools/picassojs/color---sequential"

@@ -1,13 +1,18 @@
 // Adapted from: https://observablehq.com/@miralemd/picasso-js-bar-chart?collection=@miralemd/picasso-js
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import "./BarChart.scss";
 import picasso from "picasso.js";
-import { getMonths } from "../../utils/utils";
+import { getMonths } from "../../../utils/utils";
 
 const BarChart = (props) => {
   // Here we are adding the customized theme, depending on the props
   const customizedTheme = { ...props.theme, data: { field: "Sales" } };
 
+  // we use state to generate random data only once and store it
+  const [data, setData] = useState(null);
+
+  // define the data for the chart
   const getData = () => {
     const arr = [["Month", "Sales"]];
     const months = getMonths();
@@ -22,6 +27,7 @@ const BarChart = (props) => {
     ];
   };
 
+  // define the settings for the chart
   const getSettings = () => ({
     scales: {
       y: {
@@ -66,19 +72,25 @@ const BarChart = (props) => {
     ],
   });
 
+  //render the bar chart
   const renderChart = () => {
     picasso.chart({
       element: document.querySelector("#barchart"),
-      data: getData(),
+      data,
       settings: getSettings(),
     });
   };
 
-  useEffect(renderChart, [props.theme]);
+  useEffect(() => {
+    setData(getData());
+  }, []);
+  useEffect(() => {
+    if (data) {
+      renderChart();
+    }
+  }, [props.theme, data]);
 
-  return (
-    <div id="barchart" style={{height: 'inherit', border: '1px solid red'}}></div>
-  );
+  return <div id="barchart"></div>;
 };
 
 export default BarChart;

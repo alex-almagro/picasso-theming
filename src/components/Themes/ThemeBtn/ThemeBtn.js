@@ -11,7 +11,7 @@ const ThemeBtn = (props) => {
           </span>
         </button>
         <div className="titleWrapper">
-          <h3>{props.title}</h3>
+          <h4>{props.title}</h4>
           <p>
             <a
               href={props.link}
