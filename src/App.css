@@ -59,10 +59,6 @@ h3 {
   text-align: left;
 }
 
-button {
-  margin: 0;
-}
-
 code {
   background-color: blanchedalmond;
   padding: 0 15px;
@@ -72,6 +68,7 @@ code {
 }
 
 button {
+  margin: 0;
   outline: none;
   padding: 15px;
   font-size: 16px;
@@ -86,4 +83,9 @@ button {
 button:hover {
   background-color: darkslategrey;
   color: white;
+}
+button:disabled {
+  background-color: darkslategrey;
+  color: white;
+  cursor: default;
 }

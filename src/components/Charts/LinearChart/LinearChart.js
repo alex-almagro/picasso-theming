@@ -47,16 +47,13 @@ const LinearChart = (props) => {
         type: "axis",
         dock: "left",
         scale: "y",
-        formatter: props.currencyFormat || {
-          type: "d3-number",
-          format: "$,.1r",
-        },
+        formatter: props.currencyFormat,
       },
       {
         type: "axis",
         dock: "bottom",
         scale: "t",
-        formatter: props.dateFormat || { type: "d3-time", format: "%Y-%m" },
+        formatter: props.dateFormat,
       },
       {
         key: "lines",
@@ -97,7 +94,6 @@ const LinearChart = (props) => {
   useEffect(() => {
     if (data) {
       renderChart();
-      console.log(data);
     }
   }, [props.currencyFormat, props.dateFormat, data]);
 
