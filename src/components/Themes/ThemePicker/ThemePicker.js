@@ -17,12 +17,12 @@ const ThemePicker = (props) => {
       title: "Gold-silver-bronze theme",
       subtitle: "Threshold coloring",
       link: "https://qlik.dev/libraries-and-tools/picassojs/color---threshold",
-      info: "You define different thresholds, and the values will be automatically colored depending on the slot they belong to.",
+      info: "You define different thresholds, and the values will be automatically colored depending on the slot they belong to. In this case, the values below 3000 will be 'bronze', the values between 3000 and 6000 will be 'silver' and the rest will be 'gold'.",
     },
     {
-      label: "flower",
-      emoji: "🌸",
-      title: "Spring theme",
+      label: "rainbow",
+      emoji: "🌈",
+      title: "Rainbow theme",
       subtitle: "Categorical coloring",
       link: "https://qlik.dev/libraries-and-tools/picassojs/color---categorical",
       info: "You define an array of colors. The chart will be painted with these colors, always following the same order.",
@@ -40,7 +40,7 @@ const ThemePicker = (props) => {
   return (
     <div className="themePicker">
       <h3>Select a theme for the chart:</h3>
-      {buttonArr.map((btn,i) => (
+      {buttonArr.map((btn, i) => (
         <ThemeBtn
           key={i}
           label={btn.label}

@@ -8,7 +8,7 @@ import {
   blackWhiteTheme,
   heatMapTheme,
   medalTheme,
-  springTheme,
+  rainbowTheme,
 } from "../Themes/themes";
 import {
   commaFormat,
@@ -23,7 +23,7 @@ const Layout = (props) => {
   const [dateFormatIndex, setDateFormatIndex] = useState(0);
   const [currencyFormatIndex, setCurrencyFormatIndex] = useState(0);
 
-  const themesArr = [blackWhiteTheme, medalTheme, springTheme, heatMapTheme];
+  const themesArr = [blackWhiteTheme, medalTheme, rainbowTheme, heatMapTheme];
   const dateFormatArr = [yearMonthFormat, monthYearFormat, dayMonthYearFormat];
   const currencyFormatArr = [commaFormat, lettersFormat];
 

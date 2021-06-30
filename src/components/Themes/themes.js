@@ -1,6 +1,6 @@
-export const springTheme = {
+export const rainbowTheme = {
   type: "categorical-color",
-  range: ["#D1EE1E", "#8EDCE6", "#947BD3", "#F0A7A0", "#F26CA7"],
+  range: ["#FF0000", "#FF7F00", "#FFFF00", "#00FF00", "#0000FF", "#2E2B5F", "#8B00FF"],
 };
 
 export const blackWhiteTheme = {
