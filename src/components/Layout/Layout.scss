@@ -3,4 +3,11 @@
   flex-direction: column;
   place-self: center;
   width: fit-content;
+
+  #barchart, #linearchart {
+    height: 400px;
+    width: 700px;
+    margin: auto;
+    position: relative;
+  }
 }

@@ -1,7 +1,6 @@
 // Adapted from: https://observablehq.com/@miralemd/picasso-js-bar-chart?collection=@miralemd/picasso-js
 
 import React, { useEffect, useState } from "react";
-import "./BarChart.scss";
 import picasso from "picasso.js";
 import { getMonths } from "../../../utils/utils";
 
