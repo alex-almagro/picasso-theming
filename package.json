@@ -13,10 +13,12 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "PORT=3006 react-scripts start",
+    "start": "PORT=9000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test:links:internal": "start-server-and-test start http://localhost:9000 './scripts/check-links-formatted.sh internal'",
+    "test:links:external": "start-server-and-test start http://localhost:9000 './scripts/check-links-formatted.sh external'"
   },
   "eslintConfig": {
     "extends": [
@@ -38,6 +40,7 @@
   },
   "devDependencies": {
     "sass": "^1.35.1",
-    "sass-loader": "^10.1.1"
+    "sass-loader": "^10.1.1",
+    "start-server-and-test": "^1.12.6"
   }
 }
