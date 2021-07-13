@@ -71,9 +71,16 @@ const BarChart = (props) => {
     ],
   });
 
+  // adding a style is optional
+  const style = {
+    "$font-size": "14px",
+    "$font-size--l": "18px",
+    "$font-family": "Noto Sans JP",
+  };
+
   //render the bar chart
   const renderChart = () => {
-    picasso.chart({
+    picasso({ style }).chart({
       element: document.querySelector("#barchart"),
       data,
       settings: getSettings(),
